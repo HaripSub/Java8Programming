@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -160,14 +159,13 @@ public class StreamAPIImplementation {
 		System.out.println("----------------------------------------------");
 
 		Map<String, Double> averageSalaryByDepartment = employees.stream()
-		        .collect(Collectors.groupingBy(Employee::getDepartment,
-		                Collectors.averagingInt(Employee::getSalary)));
+				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingInt(Employee::getSalary)));
 
 		averageSalaryByDepartment.forEach((department, averageSalary) -> {
-		    System.out.println("Department: " + department + ", Average Salary: " + averageSalary);
+			System.out.println("Department: " + department + ", Average Salary: " + averageSalary);
 		});
-		
+
 		System.out.println("----------------------------------------------");
 
-}
+	}
 }
